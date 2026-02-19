@@ -5,9 +5,9 @@ import { projectsEN } from "@/content/en/projects";
 
 export default async function Projects({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ lang: string }>;
-}) {
+}>) {
   const { lang: rawLang } = await params;
   const lang = rawLang === "en" ? "en" : "fr";
   const isFr = lang === "fr";
@@ -30,7 +30,7 @@ export default async function Projects({
       <section className="mt-10 grid gap-6 sm:grid-cols-2">
         {projects.map((p) => (
           <article key={p.slug} className="card overflow-hidden">
-            <div className="relative aspect-[16/10] w-full bg-neutral-900">
+            <div className="relative aspect-16/10 w-full bg-neutral-900">
               <Image
                 src={p.coverImageUrl}
                 alt={p.title}
