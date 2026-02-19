@@ -12,6 +12,9 @@ export default function Header({ lang }: { lang: "fr" | "en" }) {
         </Link>
 
         <nav className="flex items-center gap-6 text-sm text-neutral-300">
+           <Link className="hover:text-white" href={`/${lang}/`}>
+            {isFr ? "Accueil" : "Home"}
+          </Link>
           <Link className="hover:text-white" href={`/${lang}/projects`}>
             {isFr ? "Projets" : "Projects"}
           </Link>
