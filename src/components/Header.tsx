@@ -23,8 +23,10 @@ export default function Header({ lang }: Readonly<{ lang: "fr" | "en" }>) {
 
   // Close menu when route changes
   useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+    if (!open) return;
+    const id = setTimeout(() => setOpen(false), 0);
+    return () => clearTimeout(id);
+  }, [pathname, open]);
 
   // Lock body scroll when menu is open
   useEffect(() => {

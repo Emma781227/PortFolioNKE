@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Footer({ lang }: { lang: "fr" | "en" }) {
+export default function Footer({ lang }: Readonly<{ lang: "fr" | "en" }>) {
   const isFr = lang === "fr";
   const year = new Date().getFullYear();
 

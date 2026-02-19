@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 function switchLangPath(pathname: string, target: "fr" | "en") {
   const parts = pathname.split("/").filter(Boolean);
@@ -12,11 +12,20 @@ function switchLangPath(pathname: string, target: "fr" | "en") {
   return "/" + parts.join("/");
 }
 
-export default function LanguageSwitcher({ lang }: { lang: "fr" | "en" }) {
-  const pathname = usePathname();
+export default function LanguageSwitcher({ lang }: Readonly<{ lang: "fr" | "en" }>) {
   const other = lang === "fr" ? "en" : "fr";
 
-  const href = switchLangPath(pathname || `/${lang}`, other);
+  // Render a stable server-side href (root of target lang) to avoid
+  // hydration mismatches. On the client, compute the exact path after mount.
+  const [href, setHref] = useState(`/${other}`);
+
+  useEffect(() => {
+    const id = setTimeout(() => {
+      const pathname = globalThis.window === undefined ? `/${lang}` : globalThis.location.pathname;
+      setHref(switchLangPath(pathname, other));
+    }, 0);
+    return () => clearTimeout(id);
+  }, [lang, other]);
 
   return (
     <Link
