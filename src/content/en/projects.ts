@@ -27,7 +27,7 @@ export const projectsEN: Project[] = [
     title: "R+2 Residential Building",
     subtitle: "Structural design + RC detailing (footings, beams, column starters)",
     year: "2025",
-    location: "—",
+    location: "-",
     tags: ["Structure", "Foundations", "Rebar Detailing", "Reinforced Concrete"],
     tools: ["AutoCAD", "Robot/SAP2000 (if used)"],
     pdfUrl: "/projects/rplus2-building/plans.pdf",

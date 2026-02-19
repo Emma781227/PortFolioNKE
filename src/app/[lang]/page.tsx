@@ -176,7 +176,7 @@ export default async function Home({
                       {p.title}
                     </h3>
                     <p className="mt-1 text-sm text-neutral-400">
-                      {p.location ? p.location : isFr ? "Localisation —" : "Location —"}
+                      {p.location ? p.location : isFr ? "Localisation -" : "Location -"}
                     </p>
                   </div>
 

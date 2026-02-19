@@ -45,7 +45,7 @@ export default async function Projects({
                 <div>
                   <h2 className="text-lg font-semibold tracking-tight">{p.title}</h2>
                   <p className="mt-1 text-sm text-neutral-400">
-                    {p.location ? p.location : isFr ? "Localisation —" : "Location —"}
+                    {p.location ? p.location : isFr ? "Localisation -" : "Location -"}
                   </p>
                 </div>
                 <span className="badge">{p.year}</span>
