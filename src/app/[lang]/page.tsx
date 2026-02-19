@@ -24,7 +24,7 @@ export default async function Home({
           {/* Photo */}
           <div className="relative min-h-[420px] w-full bg-neutral-900">
             <Image
-              src="/profile.jpg"
+              src="/Profile.jpg"
               alt="Nke Elomo Michele Jorel"
               fill
               className="object-cover object-top"
@@ -85,7 +85,7 @@ export default async function Home({
                 {isFr ? "Me contacter" : "Contact"}
               </Link>
 
-              <a href="/cv.pdf" target="_blank" rel="noreferrer" className="btn-secondary">
+              <a href="/CV.pdf" target="_blank" rel="noreferrer" className="btn-secondary">
                 {isFr ? "Télécharger le CV" : "Open CV"}
               </a>
             </div>
