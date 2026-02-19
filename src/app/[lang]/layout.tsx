@@ -15,21 +15,21 @@ export function generateStaticParams() {
   return supportedLangs.map((lang) => ({ lang }));
 }
 
-export default function LangLayout({
+export default async function LangLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
-  const lang = (supportedLangs.includes(params.lang as Lang)
-    ? (params.lang as Lang)
+  const { lang: rawLang } = await params;
+  const lang = (supportedLangs.includes(rawLang as Lang)
+    ? (rawLang as Lang)
     : "fr") satisfies Lang;
 
   return (
     <html lang={lang} className="dark">
       <body className="min-h-screen bg-neutral-950 text-neutral-100">
-        {/* Subtle engineering grid background */}
         <div className="grid-bg min-h-screen">
           <div className="min-h-screen bg-neutral-950/70">
             <Header lang={lang} />
