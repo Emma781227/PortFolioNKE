@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-export default function Header({ lang }: { lang: "fr" | "en" }) {
+export default function Header({ lang }: Readonly<{ lang: "fr" | "en" }>) {
   const isFr = lang === "fr";
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -116,7 +116,7 @@ export default function Header({ lang }: { lang: "fr" | "en" }) {
           />
 
           {/* Panel */}
-          <div className="fixed left-0 right-0 top-[65px] z-50 border-b border-neutral-900 bg-neutral-950/95 backdrop-blur">
+          <div className="fixed left-0 right-0 top-16.25 z-50 border-b border-neutral-900 bg-neutral-950/95 backdrop-blur">
             <div className="mx-auto max-w-5xl px-6 py-5">
               <div className="grid gap-2">
                 {navItems.map((item) => (
