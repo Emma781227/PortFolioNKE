@@ -2,11 +2,11 @@ import Link from "next/link";
 import { experienceFR } from "@/content/fr/experience";
 import { experienceEN } from "@/content/en/experience";
 
-export default async function ExperiencePage({
+export async function ExperienceSection({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ lang: string }>;
-}) {
+}>) {
   const { lang: rawLang } = await params;
   const lang = rawLang === "en" ? "en" : "fr";
   const isFr = lang === "fr";
@@ -14,7 +14,7 @@ export default async function ExperiencePage({
   const experiences = isFr ? experienceFR : experienceEN;
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-16">
+    <>
       <header>
         <p className="label-tech">{isFr ? "Parcours" : "Career"}</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight">
@@ -36,7 +36,7 @@ export default async function ExperiencePage({
           <div className="space-y-8">
             {experiences.map((exp) => (
               <article key={`${exp.title}-${exp.period}`} className="relative">
-                <div className="absolute -left-[2px] top-6 h-3 w-3 rounded-full border border-neutral-700 bg-neutral-950" />
+                <div className="absolute -left-0.5 top-6 h-3 w-3 rounded-full border border-neutral-700 bg-neutral-950" />
 
                 <div className="card p-8">
                   <div className="flex flex-wrap items-start justify-between gap-4">
@@ -118,6 +118,18 @@ export default async function ExperiencePage({
           </div>
         </div>
       </section>
+    </>
+  );
+}
+
+export default async function ExperiencePage({
+  params,
+}: Readonly<{
+  params: Promise<{ lang: string }>;
+}>) {
+  return (
+    <main className="mx-auto max-w-5xl px-6 py-16">
+      <ExperienceSection params={params} />
     </main>
   );
 }

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import CvButton from "@/components/CvButton";
+import { ExperienceSection } from "./experience/page";
+
 
 import { projectsFR } from "@/content/fr/projects";
 import { projectsEN } from "@/content/en/projects";
@@ -138,7 +140,7 @@ export default async function Home({
         </div>
       </section>
 
-      {/* FEATURED PROJECTS */}
+{/* FEATURED PROJECTS */}
       <section id="projects" className="mt-16">
         <div className="flex items-end justify-between gap-6">
           <div>
@@ -214,6 +216,11 @@ export default async function Home({
             </article>
           ))}
         </div>
+      </section>
+        
+      {/* Experience section (imported) */}
+      <section id="experience" className="mt-16">
+        <ExperienceSection params={params} />
       </section>
 
       {/* SOFTWARE */}
