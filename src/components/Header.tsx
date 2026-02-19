@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import CvButton from "./CvButton";
 
@@ -41,8 +41,27 @@ export default function Header({ lang }: Readonly<{ lang: "fr" | "en" }>) {
 
   const isActive = (href: string) => pathname === href || pathname?.startsWith(href + "/");
 
+  const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-900 bg-neutral-950/75 backdrop-blur">
+    <header
+      ref={headerRef}
+      className={
+        `sticky top-0 z-50 border-b transition-all duration-300 ease-in-out ${
+          scrolled ? "border-neutral-800 bg-neutral-950/80 backdrop-blur-lg shadow-lg" : "border-neutral-900 bg-neutral-950/55 backdrop-blur"
+        }`
+      }
+    >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         {/* Brand */}
         <Link href={`/${lang}`} className="group flex flex-col leading-tight">
