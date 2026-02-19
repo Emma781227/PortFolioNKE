@@ -29,7 +29,7 @@ export default function Footer({ lang }: Readonly<{ lang: "fr" | "en" }>) {
                 <Link href={`/${lang}/`} className="hover:text-white">
                   {isFr ? "Accueil" : "Home"}
                 </Link>
-                <Link href={`/${lang}/projects`} className="hover:text-white">
+                <Link href={`/${lang}#projects`} className="hover:text-white">
                   {isFr ? "Projets" : "Projects"}
                 </Link>
                 <Link href={`/${lang}/experience`} className="hover:text-white">

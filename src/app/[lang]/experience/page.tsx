@@ -109,7 +109,7 @@ export default async function ExperiencePage({
           </div>
 
           <div className="flex gap-3">
-            <Link href={`/${lang}/projects`} className="btn-secondary">
+            <Link href={`/${lang}#projects`} className="btn-secondary">
               {isFr ? "Voir les projets" : "View projects"}
             </Link>
             <Link href={`/${lang}/contact`} className="btn-primary">

@@ -23,7 +23,7 @@ export default async function ProjectPage({
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-16">
-      <Link href={`/${lang}/projects`} className="text-sm text-neutral-400 hover:text-white">
+      <Link href={`/${lang}#projects`} className="text-sm text-neutral-400 hover:text-white">
         ← {isFr ? "Retour aux projets" : "Back to projects"}
       </Link>
 

@@ -118,7 +118,7 @@ export default async function ContactPage({
           </div>
 
           <div className="flex gap-3">
-            <Link href={`/${lang}/projects`} className="btn-secondary">
+            <Link href={`/${lang}#projects`} className="btn-secondary">
               {isFr ? "Voir les projets" : "View projects"}
             </Link>
 

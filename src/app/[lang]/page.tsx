@@ -78,7 +78,7 @@ export default async function Home({
 
             {/* Buttons */}
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href={`/${lang}/projects`} className="btn-primary">
+              <Link href={`/${lang}#projects`} className="btn-primary">
                 {isFr ? "Voir mes projets" : "View my projects"}
               </Link>
 
@@ -139,7 +139,7 @@ export default async function Home({
       </section>
 
       {/* FEATURED PROJECTS */}
-      <section className="mt-16">
+      <section id="projects" className="mt-16">
         <div className="flex items-end justify-between gap-6">
           <div>
             <p className="label-tech">{isFr ? "Portfolio" : "Portfolio"}</p>
@@ -149,7 +149,7 @@ export default async function Home({
           </div>
 
           <Link
-            href={`/${lang}/projects`}
+            href={`/${lang}#projects`}
             className="text-sm text-neutral-400 hover:text-white"
           >
             {isFr ? "Voir tout →" : "View all →"}
@@ -284,7 +284,7 @@ export default async function Home({
           </div>
 
           <div className="flex gap-3">
-            <Link href={`/${lang}/projects`} className="btn-secondary">
+            <Link href={`/${lang}#projects`} className="btn-secondary">
               {isFr ? "Voir les projets" : "View projects"}
             </Link>
             <Link href={`/${lang}/contact`} className="btn-primary">
