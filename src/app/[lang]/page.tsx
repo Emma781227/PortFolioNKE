@@ -50,8 +50,8 @@ export default async function Home({
 
             <p className="mt-3 text-lg text-neutral-300 font-medium">
               {isFr
-                ? "Ingénieur Génie Civil – Structure & Plans d’Exécution"
-                : "Civil Engineer – Structural Design & Execution Drawings"}
+                ? "Ingénieur Génie Civil - Structure & Plans d’Exécution"
+                : "Civil Engineer - Structural Design & Execution Drawings"}
             </p>
 
             <p className="mt-5 max-w-2xl text-neutral-300 leading-relaxed">
