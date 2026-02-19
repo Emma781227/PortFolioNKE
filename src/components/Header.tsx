@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import CvButton from "./CvButton";
 
 export default function Header({ lang }: Readonly<{ lang: "fr" | "en" }>) {
   const isFr = lang === "fr";
@@ -69,12 +70,9 @@ export default function Header({ lang }: Readonly<{ lang: "fr" | "en" }>) {
             </Link>
           ))}
 
-          <a
-            href="/cv.pdf"
-            className="rounded-xl border border-neutral-800 px-3 py-2 text-xs font-medium text-neutral-200 hover:bg-neutral-900/40"
-          >
-            {isFr ? "CV" : "CV"}
-          </a>
+          <CvButton lang={lang} className="rounded-xl border border-neutral-800 px-3 py-2 text-xs font-medium text-neutral-200 hover:bg-neutral-900/40">
+            CV
+          </CvButton>
 
           <LanguageSwitcher lang={lang} />
         </nav>
@@ -135,12 +133,7 @@ export default function Header({ lang }: Readonly<{ lang: "fr" | "en" }>) {
                   </Link>
                 ))}
 
-                <a
-                  href="/cv.pdf"
-                  className="rounded-xl border border-neutral-800 px-4 py-3 text-sm text-neutral-200 hover:bg-neutral-900/40"
-                >
-                  {isFr ? "Télécharger le CV" : "Download CV"}
-                </a>
+                <CvButton lang={lang} className="rounded-xl border border-neutral-800 px-4 py-3 text-sm text-neutral-200 hover:bg-neutral-900/40" />
               </div>
             </div>
           </div>

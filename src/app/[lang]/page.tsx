@@ -1,14 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
+import CvButton from "@/components/CvButton";
 
 import { projectsFR } from "@/content/fr/projects";
 import { projectsEN } from "@/content/en/projects";
 
 export default async function Home({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ lang: string }>;
-}) {
+}>) {
   const { lang: rawLang } = await params;
   const lang = rawLang === "en" ? "en" : "fr";
   const isFr = lang === "fr";
@@ -22,7 +23,7 @@ export default async function Home({
       <section className="card grid-bg overflow-hidden">
         <div className="grid gap-0 lg:grid-cols-[420px_1fr]">
           {/* Photo */}
-          <div className="relative min-h-[420px] w-full bg-neutral-900">
+          <div className="relative min-h-105 w-full bg-neutral-900">
             <Image
               src="/Profile.jpg"
               alt="Nke Elomo Michele Jorel"
@@ -32,7 +33,7 @@ export default async function Home({
             />
 
             {/* Overlay gradient for readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-neutral-950/70 via-transparent to-transparent" />
           </div>
 
           {/* Content */}
@@ -85,9 +86,9 @@ export default async function Home({
                 {isFr ? "Me contacter" : "Contact"}
               </Link>
 
-              <a href="/CV.pdf" target="_blank" rel="noreferrer" className="btn-secondary">
+              <CvButton lang={lang} href="/CV.pdf" className="btn-secondary">
                 {isFr ? "Télécharger le CV" : "Open CV"}
-              </a>
+              </CvButton>
             </div>
           </div>
         </div>
@@ -158,7 +159,7 @@ export default async function Home({
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
           {featuredProjects.map((p) => (
             <article key={p.slug} className="card overflow-hidden">
-              <div className="relative aspect-[16/10] w-full bg-neutral-900">
+              <div className="relative aspect-16/10 w-full bg-neutral-900">
                 <Image
                   src={p.coverImageUrl}
                   alt={p.title}
@@ -247,7 +248,7 @@ export default async function Home({
             },
           ].map((tool) => (
             <div key={tool.title} className="card overflow-hidden">
-              <div className="relative aspect-[16/10] w-full bg-neutral-900">
+              <div className="relative aspect-16/10 w-full bg-neutral-900">
                 <Image
                   src={tool.img}
                   alt={tool.title}

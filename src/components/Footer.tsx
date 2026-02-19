@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CvButton from "./CvButton";
 
 export default function Footer({ lang }: Readonly<{ lang: "fr" | "en" }>) {
   const isFr = lang === "fr";
@@ -46,9 +47,9 @@ export default function Footer({ lang }: Readonly<{ lang: "fr" | "en" }>) {
                 <Link href={`/${lang}/contact`} className="hover:text-white">
                   {isFr ? "Me contacter" : "Contact"}
                 </Link>
-                <a href="/cv.pdf" className="hover:text-white">
+                <CvButton lang={lang} className="hover:text-white">
                   {isFr ? "Télécharger CV" : "Download CV"}
-                </a>
+                </CvButton>
               </div>
             </div>
           </div>
