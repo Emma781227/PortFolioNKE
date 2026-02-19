@@ -62,7 +62,7 @@ export default function Footer({ lang }: Readonly<{ lang: "fr" | "en" }>) {
           </p>
 
           <p className="text-neutral-600">
-            {isFr ? "Conçu avec Next.js & Tailwind" : "Built with Next.js & Tailwind"}
+            {isFr ? "Conçu par Emmanuel ENGONGOMO" : "Built by Emmanuel ENGONGOMO"}
           </p>
         </div>
       </div>
