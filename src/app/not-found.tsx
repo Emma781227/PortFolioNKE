@@ -9,7 +9,7 @@ export default function NotFound() {
 
             <div className="mt-8">
                 <Link href="/fr" className="btn-primary">
-                    Retour à l'accueil
+                    Retour à l&apos;accueil
                 </Link>
             </div>
         </main>
