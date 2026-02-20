@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Emmanuel ENGONGOMO
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-First, run the development server:
+## 🌐 Portfolio en ligne
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Découvrez le portfolio complet de **Nke Elomo Michelle Jorel**
+sur : **[portfolio-nke-elomo.vercel.app](portfolio-nke-elomo.vercel.app)**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👋 À propos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Je suis Emmanuel ENGONGOMO, développeur web passionné par la création d'expériences numériques soignées.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Technologies
 
-## Learn More
+- **Next.js**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **ESLint**
 
-To learn more about Next.js, take a look at the following resources:
+## 📞 Contact
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Remplissez ces informations avant publication :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Email** : [votre-email@example.com](votre-email@example.com)
+- **LinkedIn** : [https://www.linkedin.com/in/votre-profile](https://www.linkedin.com/in/votre-profile)
+- **GitHub** : [https://github.com/Emma781227](https://github.com/Emma781227)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 👥 Contributeur
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contributions par :
+
+- **GitHub** : [https://github.com/TabarBaptiste](https://github.com/TabarBaptiste)
+
+---
+
+*Développé avec ❤️ par Emmanuel ENGONGOMO*

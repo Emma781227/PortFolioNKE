@@ -2,10 +2,10 @@ import { Experience } from "../experience.types";
 
 export const experienceFR: Experience[] = [
   {
-    title: "Stage — Expertise technique / Ingénieur structure",
+    title: "Stage - Expertise technique / Ingénieur structure",
     company: "Fonds Routier",
     location: "Yaoundé (Cameroun)",
-    period: "Novembre 2025 — Février 2026",
+    period: "Novembre 2025 - Février 2026",
     description:
       "Participation à la conception de structures en béton armé et à la production de plans d’exécution pour des projets résidentiels.",
     missions: [
@@ -17,10 +17,10 @@ export const experienceFR: Experience[] = [
     tools: ["AutoCAD", "Excel", "Normes BA (à préciser)"],
   },
   {
-    title: "Stage — Assistante Directrice Technique",
+    title: "Stage - Assistante Directrice Technique",
     company: "STE DOH ET FRERES",
     location: "Yaoundé (Cameroun)",
-    period: "Février 2025 — Juillet 2025",
+    period: "Février 2025 - Juillet 2025",
     description:
       "Appui aux études techniques et au suivi de chantier sur des projets de construction.",
     missions: [
@@ -31,10 +31,10 @@ export const experienceFR: Experience[] = [
     tools: ["AutoCAD", "MS Office"],
   },
   {
-    title: "Stage — Assistante Ingénieur structure",
+    title: "Stage - Assistante Ingénieur structure",
     company: "STE DOH ET FRERES",
     location: "Yaoundé (Cameroun)",
-    period: "Juillet 2024 — Août 2024",
+    period: "Juillet 2024 - Août 2024",
     description:
       "Participation au suivi des études et à l’organisation des activités chantier sur des projets de construction.",
     missions: [
@@ -46,10 +46,10 @@ export const experienceFR: Experience[] = [
     tools: ["AutoCAD", "MS Office"],
   },
   {
-    title: "Stage — Assistante Dessinatrice Architecture & Structure",
+    title: "Stage - Assistante Dessinatrice Architecture & Structure",
     company: "Groupe MALABO",
     location: "Yaoundé (Cameroun)",
-    period: "Juin 2022 — Juillet 2022",
+    period: "Juin 2022 - Juillet 2022",
     description:
       "Assistance à la conception et au dessin de plans architecturaux et structurels.",
     missions: [

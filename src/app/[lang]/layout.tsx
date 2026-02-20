@@ -18,26 +18,24 @@ export function generateStaticParams() {
 export default async function LangLayout({
   children,
   params,
-}: {
+}: Readonly<{
   children: React.ReactNode;
   params: Promise<{ lang: string }>;
-}) {
+}>) {
   const { lang: rawLang } = await params;
   const lang = (supportedLangs.includes(rawLang as Lang)
     ? (rawLang as Lang)
     : "fr") satisfies Lang;
 
   return (
-    <html lang={lang} className="dark">
-      <body className="min-h-screen bg-neutral-950 text-neutral-100">
-        <div className="grid-bg min-h-screen">
-          <div className="min-h-screen bg-neutral-950/70">
-            <Header lang={lang} />
-            {children}
-            <Footer lang={lang} />
-          </div>
+    <div className="min-h-screen bg-neutral-950 text-neutral-100">
+      <div className="grid-bg min-h-screen">
+        <div className="min-h-screen bg-neutral-950/70">
+          <Header lang={lang} />
+          {children}
+          <Footer lang={lang} />
         </div>
-      </body>
-    </html>
+      </div>
+    </div>
   );
 }

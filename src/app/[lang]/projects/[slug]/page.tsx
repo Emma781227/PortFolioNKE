@@ -7,9 +7,9 @@ import { projectsEN } from "@/content/en/projects";
 
 export default async function ProjectPage({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ lang: string; slug: string }>;
-}) {
+}>) {
   const { lang: rawLang, slug: rawSlug } = await params;
   const lang = rawLang === "en" ? "en" : "fr";
   const isFr = lang === "fr";
@@ -23,7 +23,7 @@ export default async function ProjectPage({
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-16">
-      <Link href={`/${lang}/projects`} className="text-sm text-neutral-400 hover:text-white">
+      <Link href={`/${lang}#projects`} className="text-sm text-neutral-400 hover:text-white">
         ← {isFr ? "Retour aux projets" : "Back to projects"}
       </Link>
 
@@ -61,7 +61,7 @@ export default async function ProjectPage({
       </header>
 
       <section className="card mt-10 overflow-hidden">
-        <div className="relative aspect-[16/9] w-full">
+        <div className="relative aspect-video w-full">
           <Image
             src={project.coverImageUrl}
             alt={project.title}
@@ -145,7 +145,7 @@ export default async function ProjectPage({
         </div>
 
         <div className="card mt-6 overflow-hidden">
-          <iframe src={project.pdfUrl} className="h-[820px] w-full" title={project.title} />
+          <iframe src={project.pdfUrl} className="h-205 w-full" title={project.title} />
         </div>
       </section>
     </main>

@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import CvButton from "./CvButton";
 
-export default function Header({ lang }: { lang: "fr" | "en" }) {
+export default function Header({ lang }: Readonly<{ lang: "fr" | "en" }>) {
   const isFr = lang === "fr";
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -13,8 +14,8 @@ export default function Header({ lang }: { lang: "fr" | "en" }) {
   const navItems = useMemo(
     () => [
       { href: `/${lang}/`, label: isFr ? "Accueil" : "Home" },
-      { href: `/${lang}/projects`, label: isFr ? "Projets" : "Projects" },
-      { href: `/${lang}/experience`, label: isFr ? "Expérience" : "Experience" },
+      { href: `/${lang}#projects`, label: isFr ? "Projets" : "Projects" },
+      { href: `/${lang}#experience`, label: isFr ? "Expérience" : "Experience" },
       { href: `/${lang}/about`, label: isFr ? "À propos" : "About" },
       { href: `/${lang}/contact`, label: isFr ? "Contact" : "Contact" },
     ],
@@ -23,8 +24,10 @@ export default function Header({ lang }: { lang: "fr" | "en" }) {
 
   // Close menu when route changes
   useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+    if (!open) return;
+    const id = setTimeout(() => setOpen(false), 0);
+    return () => clearTimeout(id);
+  }, [pathname, open]);
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -38,8 +41,27 @@ export default function Header({ lang }: { lang: "fr" | "en" }) {
 
   const isActive = (href: string) => pathname === href || pathname?.startsWith(href + "/");
 
+  const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-900 bg-neutral-950/75 backdrop-blur">
+    <header
+      ref={headerRef}
+      className={
+        `sticky top-0 z-50 border-b transition-all duration-300 ease-in-out ${
+          scrolled ? "border-neutral-800 bg-neutral-950/80 backdrop-blur-lg shadow-lg" : "border-neutral-900 bg-neutral-950/55 backdrop-blur"
+        }`
+      }
+    >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         {/* Brand */}
         <Link href={`/${lang}`} className="group flex flex-col leading-tight">
@@ -67,12 +89,9 @@ export default function Header({ lang }: { lang: "fr" | "en" }) {
             </Link>
           ))}
 
-          <a
-            href="/cv.pdf"
-            className="rounded-xl border border-neutral-800 px-3 py-2 text-xs font-medium text-neutral-200 hover:bg-neutral-900/40"
-          >
-            {isFr ? "CV" : "CV"}
-          </a>
+          <CvButton lang={lang} className="rounded-xl border border-neutral-800 px-3 py-2 text-xs font-medium text-neutral-200 hover:bg-neutral-900/40">
+            CV
+          </CvButton>
 
           <LanguageSwitcher lang={lang} />
         </nav>
@@ -116,7 +135,7 @@ export default function Header({ lang }: { lang: "fr" | "en" }) {
           />
 
           {/* Panel */}
-          <div className="fixed left-0 right-0 top-[65px] z-50 border-b border-neutral-900 bg-neutral-950/95 backdrop-blur">
+          <div className="fixed left-0 right-0 top-16.25 z-50 border-b border-neutral-900 bg-neutral-950/95 backdrop-blur">
             <div className="mx-auto max-w-5xl px-6 py-5">
               <div className="grid gap-2">
                 {navItems.map((item) => (
@@ -133,12 +152,7 @@ export default function Header({ lang }: { lang: "fr" | "en" }) {
                   </Link>
                 ))}
 
-                <a
-                  href="/cv.pdf"
-                  className="rounded-xl border border-neutral-800 px-4 py-3 text-sm text-neutral-200 hover:bg-neutral-900/40"
-                >
-                  {isFr ? "Télécharger le CV" : "Download CV"}
-                </a>
+                <CvButton lang={lang} className="rounded-xl border border-neutral-800 px-4 py-3 text-sm text-neutral-200 hover:bg-neutral-900/40" />
               </div>
             </div>
           </div>

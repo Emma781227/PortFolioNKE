@@ -36,9 +36,9 @@ export const aboutEN: AboutContent = {
     educationTitle: "Education",
   education: [
     {
-      degree: "Master (example) — Civil / Structural Engineering",
+      degree: "Master (example) - Civil / Structural Engineering",
       school: "University / School name (to replace)",
-      period: "2024 — 2026",
+      period: "2024 - 2026",
       details: [
         "Reinforced concrete, structural analysis, CAD/BIM",
         "Projects: plans, foundations, rebar detailing",
@@ -47,7 +47,7 @@ export const aboutEN: AboutContent = {
     {
       degree: "Bachelor (example)",
       school: "Institution name (to replace)",
-      period: "2021 — 2024",
+      period: "2021 - 2024",
       details: ["Core structural engineering courses", "Labs and academic projects"],
     },
   ],

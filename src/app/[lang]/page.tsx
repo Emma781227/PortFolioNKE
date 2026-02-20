@@ -1,14 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
+import CvButton from "@/components/CvButton";
+import { ExperienceSection } from "./experience/page";
+
 
 import { projectsFR } from "@/content/fr/projects";
 import { projectsEN } from "@/content/en/projects";
 
 export default async function Home({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ lang: string }>;
-}) {
+}>) {
   const { lang: rawLang } = await params;
   const lang = rawLang === "en" ? "en" : "fr";
   const isFr = lang === "fr";
@@ -22,7 +25,7 @@ export default async function Home({
       <section className="card grid-bg overflow-hidden">
         <div className="grid gap-0 lg:grid-cols-[420px_1fr]">
           {/* Photo */}
-          <div className="relative min-h-[420px] w-full bg-neutral-900">
+          <div className="relative min-h-105 w-full bg-neutral-900">
             <Image
               src="/Profile.jpg"
               alt="Nke Elomo Michele Jorel"
@@ -32,7 +35,7 @@ export default async function Home({
             />
 
             {/* Overlay gradient for readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-neutral-950/70 via-transparent to-transparent" />
           </div>
 
           {/* Content */}
@@ -49,8 +52,8 @@ export default async function Home({
 
             <p className="mt-3 text-lg text-neutral-300 font-medium">
               {isFr
-                ? "Ingénieur Génie Civil – Structure & Plans d’Exécution"
-                : "Civil Engineer – Structural Design & Execution Drawings"}
+                ? "Ingénieur Génie Civil - Structure & Plans d’Exécution"
+                : "Civil Engineer - Structural Design & Execution Drawings"}
             </p>
 
             <p className="mt-5 max-w-2xl text-neutral-300 leading-relaxed">
@@ -77,7 +80,7 @@ export default async function Home({
 
             {/* Buttons */}
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href={`/${lang}/projects`} className="btn-primary">
+              <Link href={`/${lang}#projects`} className="btn-primary">
                 {isFr ? "Voir mes projets" : "View my projects"}
               </Link>
 
@@ -85,9 +88,9 @@ export default async function Home({
                 {isFr ? "Me contacter" : "Contact"}
               </Link>
 
-              <a href="/CV.pdf" target="_blank" rel="noreferrer" className="btn-secondary">
+              <CvButton lang={lang} href="/CV.pdf" className="btn-secondary">
                 {isFr ? "Télécharger le CV" : "Open CV"}
-              </a>
+              </CvButton>
             </div>
           </div>
         </div>
@@ -137,8 +140,8 @@ export default async function Home({
         </div>
       </section>
 
-      {/* FEATURED PROJECTS */}
-      <section className="mt-16">
+{/* FEATURED PROJECTS */}
+      <section id="projects" className="mt-16">
         <div className="flex items-end justify-between gap-6">
           <div>
             <p className="label-tech">{isFr ? "Portfolio" : "Portfolio"}</p>
@@ -148,7 +151,7 @@ export default async function Home({
           </div>
 
           <Link
-            href={`/${lang}/projects`}
+            href={`/${lang}#projects`}
             className="text-sm text-neutral-400 hover:text-white"
           >
             {isFr ? "Voir tout →" : "View all →"}
@@ -158,7 +161,7 @@ export default async function Home({
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
           {featuredProjects.map((p) => (
             <article key={p.slug} className="card overflow-hidden">
-              <div className="relative aspect-[16/10] w-full bg-neutral-900">
+              <div className="relative aspect-16/10 w-full bg-neutral-900">
                 <Image
                   src={p.coverImageUrl}
                   alt={p.title}
@@ -175,7 +178,7 @@ export default async function Home({
                       {p.title}
                     </h3>
                     <p className="mt-1 text-sm text-neutral-400">
-                      {p.location ? p.location : isFr ? "Localisation —" : "Location —"}
+                      {p.location ? p.location : isFr ? "Localisation -" : "Location -"}
                     </p>
                   </div>
 
@@ -214,6 +217,11 @@ export default async function Home({
           ))}
         </div>
       </section>
+        
+      {/* Experience section (imported) */}
+      <section id="experience" className="mt-16">
+        <ExperienceSection params={params} />
+      </section>
 
       {/* SOFTWARE */}
       <section className="mt-16">
@@ -247,7 +255,7 @@ export default async function Home({
             },
           ].map((tool) => (
             <div key={tool.title} className="card overflow-hidden">
-              <div className="relative aspect-[16/10] w-full bg-neutral-900">
+              <div className="relative aspect-16/10 w-full bg-neutral-900">
                 <Image
                   src={tool.img}
                   alt={tool.title}
@@ -283,7 +291,7 @@ export default async function Home({
           </div>
 
           <div className="flex gap-3">
-            <Link href={`/${lang}/projects`} className="btn-secondary">
+            <Link href={`/${lang}#projects`} className="btn-secondary">
               {isFr ? "Voir les projets" : "View projects"}
             </Link>
             <Link href={`/${lang}/contact`} className="btn-primary">
