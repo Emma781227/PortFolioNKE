@@ -21,10 +21,10 @@ export default function SmoothScroll() {
         const onClick = (e: MouseEvent) => {
             const target = e.target as HTMLElement | null;
             if (!target) return;
-            const anchor = target.closest && (target.closest("a") as HTMLAnchorElement | null);
+            const anchor = target.closest?.("a");
             if (!anchor) return;
             const href = anchor.getAttribute("href");
-            if (!href || !href.includes("#")) return;
+            if (!href?.includes("#")) return;
 
             // Only handle same-page anchors (path matches)
             try {
