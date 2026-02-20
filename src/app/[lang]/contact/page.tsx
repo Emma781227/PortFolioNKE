@@ -5,9 +5,9 @@ import { contactEN } from "@/content/en/contact";
 
 export default async function ContactPage({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ lang: string }>;
-}) {
+}>) {
   const { lang: rawLang } = await params;
   const lang = rawLang === "en" ? "en" : "fr";
   const isFr = lang === "fr";
