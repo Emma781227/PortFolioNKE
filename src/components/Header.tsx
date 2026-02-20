@@ -23,11 +23,16 @@ export default function Header({ lang }: Readonly<{ lang: "fr" | "en" }>) {
   );
 
   // Close menu when route changes
+  const openRef = useRef(open);
   useEffect(() => {
-    if (!open) return;
+    openRef.current = open;
+  }, [open]);
+
+  useEffect(() => {
+    if (!openRef.current) return;
     const id = setTimeout(() => setOpen(false), 0);
     return () => clearTimeout(id);
-  }, [pathname, open]);
+  }, [pathname]);
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -57,8 +62,7 @@ export default function Header({ lang }: Readonly<{ lang: "fr" | "en" }>) {
     <header
       ref={headerRef}
       className={
-        `sticky top-0 z-50 border-b transition-all duration-300 ease-in-out ${
-          scrolled ? "border-neutral-800 bg-neutral-950/80 backdrop-blur-lg shadow-lg" : "border-neutral-900 bg-neutral-950/55 backdrop-blur"
+        `sticky top-0 z-50 border-b transition-all duration-300 ease-in-out ${scrolled ? "border-neutral-800 bg-neutral-950/80 backdrop-blur-lg shadow-lg" : "border-neutral-900 bg-neutral-950/55 backdrop-blur"
         }`
       }
     >
