@@ -1,0 +1,38 @@
+name: Link check
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: ['**']
+
+jobs:
+  link-check:
+    name: Build and check links
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Build
+        run: npm run build
+
+      - name: Start production server
+        run: npm run start &
+
+      - name: Wait for server
+        run: npx wait-on http://localhost:3000
+
+      - name: Run Linkinator
+        run:
+          npx linkinator http://localhost:3000 --recursive --quiet --timeout 60000
