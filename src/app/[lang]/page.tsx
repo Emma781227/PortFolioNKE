@@ -6,6 +6,7 @@ import { ExperienceSection } from "./experience/page";
 
 import { projectsFR } from "@/content/fr/projects";
 import { projectsEN } from "@/content/en/projects";
+import ContactSection from "./contact/page";
 
 export default async function Home({
   params,
@@ -84,7 +85,7 @@ export default async function Home({
                 {isFr ? "Voir mes projets" : "View my projects"}
               </Link>
 
-              <Link href={`/${lang}/contact`} className="btn-secondary">
+              <Link href={`/${lang}#contact`} className="btn-secondary">
                 {isFr ? "Me contacter" : "Contact"}
               </Link>
 
@@ -140,7 +141,7 @@ export default async function Home({
         </div>
       </section>
 
-{/* FEATURED PROJECTS */}
+      {/* FEATURED PROJECTS */}
       <section id="projects" className="mt-16">
         <div className="flex items-end justify-between gap-6">
           <div>
@@ -217,7 +218,7 @@ export default async function Home({
           ))}
         </div>
       </section>
-        
+
       {/* Experience section (imported) */}
       <section id="experience" className="mt-16">
         <ExperienceSection params={params} />
@@ -275,6 +276,11 @@ export default async function Home({
         </div>
       </section>
 
+      {/* Contact section (imported) */}
+      <section id="contact" className="mt-16">
+        <ContactSection params={params} />
+      </section>
+
       {/* CTA */}
       <section className="card mt-16 p-10">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -294,7 +300,7 @@ export default async function Home({
             <Link href={`/${lang}#projects`} className="btn-secondary">
               {isFr ? "Voir les projets" : "View projects"}
             </Link>
-            <Link href={`/${lang}/contact`} className="btn-primary">
+            <Link href={`/${lang}#contact`} className="btn-primary">
               {isFr ? "Contact" : "Contact"}
             </Link>
           </div>

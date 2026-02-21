@@ -3,7 +3,7 @@ import CopyButton from "@/components/CopyButton";
 import { contactFR } from "@/content/fr/contact";
 import { contactEN } from "@/content/en/contact";
 
-export default async function ContactPage({
+export default async function ContactSection({
   params,
 }: Readonly<{
   params: Promise<{ lang: string }>;

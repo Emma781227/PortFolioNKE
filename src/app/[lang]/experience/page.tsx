@@ -31,12 +31,12 @@ export async function ExperienceSection({
       {/* Timeline */}
       <section className="mt-12">
         <div className="relative pl-6">
-          <div className="absolute left-2 top-0 h-full w-px bg-neutral-800" />
+          {/* <div className="absolute left-2 top-0 h-full w-px bg-neutral-800" /> */}
 
           <div className="space-y-8">
             {experiences.map((exp) => (
               <article key={`${exp.title}-${exp.period}`} className="relative">
-                <div className="absolute -left-0.5 top-6 h-3 w-3 rounded-full border border-neutral-700 bg-neutral-950" />
+                {/* <div className="absolute -left-0.5 top-6 h-3 w-3 rounded-full border border-neutral-700 bg-neutral-950" /> */}
 
                 <div className="card p-8">
                   <div className="flex flex-wrap items-start justify-between gap-4">
@@ -112,7 +112,7 @@ export async function ExperienceSection({
             <Link href={`/${lang}#projects`} className="btn-secondary">
               {isFr ? "Voir les projets" : "View projects"}
             </Link>
-            <Link href={`/${lang}/contact`} className="btn-primary">
+            <Link href={`/${lang}#contact`} className="btn-primary">
               {isFr ? "Contact" : "Contact"}
             </Link>
           </div>

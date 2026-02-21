@@ -44,7 +44,7 @@ export default function Footer({ lang }: Readonly<{ lang: "fr" | "en" }>) {
             <div className="space-y-2">
               <p className="label-tech">{isFr ? "Contact" : "Contact"}</p>
               <div className="flex flex-col gap-2 text-neutral-400">
-                <Link href={`/${lang}/contact`} className="hover:text-white">
+                <Link href={`/${lang}#contact`} className="hover:text-white">
                   {isFr ? "Me contacter" : "Contact"}
                 </Link>
                 <CvButton lang={lang} className="hover:text-white">

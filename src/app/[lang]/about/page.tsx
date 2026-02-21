@@ -125,7 +125,7 @@ export default async function About({
           </div>
 
           <div className="flex gap-3">
-            <Link href={`/${lang}/contact`} className="btn-primary">
+            <Link href={`/${lang}#contact`} className="btn-primary">
               {isFr ? "Contact" : "Contact"}
             </Link>
             <Link href={`/${lang}#projects`} className="btn-secondary">
