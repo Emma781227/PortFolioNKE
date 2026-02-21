@@ -14,9 +14,9 @@ export default function Header({ lang }: Readonly<{ lang: "fr" | "en" }>) {
   const navItems = useMemo(
     () => [
       { href: `/${lang}/`, label: isFr ? "Accueil" : "Home" },
+      { href: `/${lang}/about`, label: isFr ? "À propos" : "About" },
       { href: `/${lang}#projects`, label: isFr ? "Projets" : "Projects" },
       { href: `/${lang}#experience`, label: isFr ? "Expérience" : "Experience" },
-      { href: `/${lang}/about`, label: isFr ? "À propos" : "About" },
       { href: `/${lang}#contact`, label: isFr ? "Contact" : "Contact" },
     ],
     [lang, isFr]

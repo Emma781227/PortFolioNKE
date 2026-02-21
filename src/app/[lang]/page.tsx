@@ -276,6 +276,11 @@ export default async function Home({
         </div>
       </section>
 
+      {/* Contact section (imported) */}
+      <section id="contact" className="mt-16">
+        <ContactSection params={params} />
+      </section>
+
       {/* CTA */}
       <section className="card mt-16 p-10">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -300,11 +305,6 @@ export default async function Home({
             </Link>
           </div>
         </div>
-      </section>
-
-      {/* Contact section (imported) */}
-      <section id="contact" className="mt-16">
-        <ContactSection params={params} />
       </section>
     </main>
   );
