@@ -5,9 +5,9 @@ import { contactEN } from "@/content/en/contact";
 
 export default async function ContactPage({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ lang: string }>;
-}) {
+}>) {
   const { lang: rawLang } = await params;
   const lang = rawLang === "en" ? "en" : "fr";
   const isFr = lang === "fr";
@@ -118,7 +118,7 @@ export default async function ContactPage({
           </div>
 
           <div className="flex gap-3">
-            <Link href={`/${lang}/projects`} className="btn-secondary">
+            <Link href={`/${lang}#projects`} className="btn-secondary">
               {isFr ? "Voir les projets" : "View projects"}
             </Link>
 

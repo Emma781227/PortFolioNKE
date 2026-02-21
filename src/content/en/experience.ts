@@ -5,7 +5,7 @@ export const experienceEN: Experience[] = [
     title: "Internship /Technical Expertise / Structural Engineer",
     company: "Road Fund,",
     location: "Yaoundé (Cameroon)",
-    period: "November 2025 — February 2026",
+    period: "November 2025 - February 2026",
     description:
       "Worked on reinforced concrete structural design and execution drawings for residential projects.",
     missions: [

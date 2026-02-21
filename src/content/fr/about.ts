@@ -37,18 +37,18 @@ export const aboutFR: AboutContent = {
     educationTitle: "Parcours éducatif",
   education: [
     {
-      degree: "Master en  — Génie Civil / Structure",
+      degree: "Master en  - Génie Civil / Structure",
       school: "Polytechnique / Douala)",
-      period: "2022 — 2025",
+      period: "2022 - 2025",
       details: [
         "Béton armé, calculs de structures, DAO/BIM",
         "Projets : plans, fondations, ferraillage",
       ],
     },
     {
-      degree: "Licence / Bachelor en  — Genie Civil et Root",
+      degree: "Licence / Bachelor en  - Genie Civil et Root",
       school: "Siantou / Yaoundé ",
-      period: "2020 — 2022",
+      period: "2020 - 2022",
       details: ["Bases en structures, matériaux, mécanique", "Travaux pratiques et projets académiques"],
     },
   ],
