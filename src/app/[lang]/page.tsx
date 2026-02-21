@@ -44,7 +44,7 @@ export default async function Home({
             </p>
 
             <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight">
-              Nke Elomo Michelle Jorel
+              Nke Elomo Michele Jorel
             </h1>
 
             <p className="mt-3 text-lg text-neutral-300 font-medium">
@@ -55,7 +55,7 @@ export default async function Home({
 
             <p className="mt-5 max-w-2xl text-neutral-300 leading-relaxed">
               {isFr
-                ? "Ingénieur en génie civil orienté structure, spécialisé dans la conception béton armé, la production de plans d’exécution et la modélisation numérique. Rigoureuse, méthodique et curieuse, je cherche constamment à perfectionner mes techniques et à maîtriser de nouveaux outils afin de produire des dossiers techniques fiables et exploitables sur chantier."
+                ? "Ingénieur en génie civil orienté structure, spécialisé dans la conception béton armé, la production de plans d’exécution et la modélisation numérique. Rigoureux, méthodique et curieux, je cherche constamment à perfectionner mes techniques et à maîtriser de nouveaux outils afin de produire des dossiers techniques fiables et exploitables sur chantier."
                 : "Civil Engineer specialized in reinforced concrete structural design, execution drawings and digital modeling. Detail-oriented and methodical, I continuously improve my skills and explore new engineering tools to deliver reliable technical packages for both design offices and construction sites."}
             </p>
 
